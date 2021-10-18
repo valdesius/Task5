@@ -6,19 +6,33 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Enter the size of the shape: ");
-        int size = readSizeOfTheShape();
+
+        int size = readSizeOfShape();
         printShape(size);
 
     }
 
-    private static int readSizeOfTheShape() {
+
+    private static int readSizeOfShape() {
+        int size = 0;
         Scanner scanner = new Scanner(System.in);
-        int size = scanner.nextInt();
+
+        try {
+            size = scanner.nextInt();
+            if (size <= 1) {
+                System.out.println("Not format for task");
+                size = scanner.nextInt();
+            }
+        } catch (Exception e) {
+            System.out.print("Error... ");
+            System.exit(1);
+        }
 
         return size;
     }
 
     private static void printShape(int size) {
+
         for (int i = 1; i < size / 2; ++i) {
 
             for (int j = size / 2; j > i; --j)
