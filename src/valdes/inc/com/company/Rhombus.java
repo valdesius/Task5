@@ -1,12 +1,13 @@
 package valdes.inc.com.company;
 
 public class Rhombus {
+    private int size;
 
-    public void setSize(int size) throws RhombusSizeException {
-        if (size <= 0 || size % 2 == 0) {
-            throw new RhombusSizeException("Incorrect size");
+    public Rhombus(int s) throws RhombusSizeException {
+        size = s;
+        if (s <= 0 || s % 2 == 0) {
+            throw new RhombusSizeException("Incorrect size! The size of the rhombus must be greater than 1 and the size should be odd");
         }
-        printShape(size);
     }
 
     public void printShape(int size) {

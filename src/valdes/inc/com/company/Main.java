@@ -5,13 +5,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Enter the size of the shape: ");
-
-        RhombusSize rhombusSize = new RhombusSize();
         int size = readNumber();
-        rhombusSize.getSize(size);
+
+        try {
+            Rhombus rhombus = new Rhombus(size);
+            rhombus.printShape(size);
+        } catch (RhombusSizeException e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 
-    public static int readNumber()  {
+    private static int readNumber()  {
         int size = 0;
         Scanner scanner = new Scanner(System.in);
         size = scanner.nextInt();
@@ -20,6 +25,7 @@ public class Main {
     }
 
 }
+
 
 
 
