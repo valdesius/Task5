@@ -1,16 +1,16 @@
 package valdes.inc.com.company;
 
 public class Rhombus {
-    private int size;
 
-    public Rhombus(int s) throws RhombusSizeException {
-        size = s;
-        if (s <= 0 || s % 2 == 0) {
-            throw new RhombusSizeException("Incorrect size! The size of the rhombus must be greater than 1 and the size should be odd");
+    public Rhombus(int size) throws RhombusSizeException {
+        if (size <= 1 || size % 2 == 0){
+            System.err.println("Size of the rhombus must be more than 1 and be odd");
+            throw new RhombusSizeException("Size is incorrect");
         }
     }
 
-    public void printShape(int size) {
+    void printShape(int size) {
+
         for (int i = 1; i < size / 2; ++i) {
             for (int j = size / 2; j > i; --j)
                 System.out.print(" ");
@@ -26,6 +26,5 @@ public class Rhombus {
                 System.out.print("*");
             System.out.println();
         }
-
     }
 }

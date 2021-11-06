@@ -2,11 +2,7 @@ package valdes.inc.com.company;
 
 public class RhombusSizeException extends Exception{
 
-    public RhombusSizeException() {
-    }
-
-    public RhombusSizeException(String message) {
-        super(message);
+    public RhombusSizeException(String message) {super(message);
     }
 
     public RhombusSizeException(String message, Throwable cause) {
