@@ -19,7 +19,7 @@ public class Main {
         try {
             num = Integer.parseInt(size);
         } catch (NumberFormatException e) {
-            throw new RhombusSizeException("String is incorrect", e);
+            throw new RhombusSizeException("Type of entered value is not Integer", e);
         }
         return num;
     }
